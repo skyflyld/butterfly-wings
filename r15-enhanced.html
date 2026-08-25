@@ -2536,7 +2536,7 @@ async function init() {
   for (const p of parsed) {
     if (p.type === 'archive') {
       if (!ab) { ab = {...p, title:'档案：2016–2036'}; merged.push(ab); }
-      ab.content += '\n\n' + p.content;
+      else { ab.content += '\n\n' + p.content; }
       continue;
     }
     ab = null;
