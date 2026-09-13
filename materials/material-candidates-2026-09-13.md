@@ -2,8 +2,8 @@
 
 **为 Sky 的问题准备**：「这些案例和最佳的新闻，还有哪些可纳入《蝶翼之间》小说素材」
 
-**小说版本**：`/home/gem/workspace/agent/workspace-main/skyflyld/butterfly-wings/butterfly-wings-r15.md`（内容标 隐形的纪元 R16 · 2026-09-10，426,353 bytes）
-> ⚠️ 任务书给的路径 `projects/skyflyld-courseware/butterfly-wings/butterfly-wings-r15.md` 不存在（该目录下只有 index.html / flipbook.html）。真身在上面的路径。
+**小说正本**：`butterfly-wings-r16.md`（隐形的纪元 R16 · 2026-09-10，426,353 B）→ 线上 https://k286c7hg65-hub.github.io/butterfly-wings/
+**本清单**：源 `materials/material-candidates-2026-09-13.md` · 本页由 `build_materials.py` 生成 · 一手页面全文存档在 `materials/sources/`
 
 ---
 
@@ -308,11 +308,11 @@
 
 | 文件 | 内容 | 状态 |
 |---|---|---|
-| `/tmp/butterfly-mat/metr.txt` | METR 报告全文纯文本（211,491 字符） | 已抓，Green |
-| `/tmp/butterfly-mat/pace.txt` | Amodei《We Must Pace the Frontier》全文纯文本（24,176 字符） | 已抓，Green |
-| `/tmp/butterfly-mat/9c586d.txt` | MIT Tech Review 正文（11,109 字符） | 已抓，Green |
-| `/tmp/butterfly-mat/fortune.txt` | Fortune「Skynet Day」正文（11,321 字符） | 已抓，Green |
-| `/tmp/butterfly-mat/metr.html` 等 | 四个页面的原始 HTML 存档 | 已抓 |
+| `materials/sources/metr.txt` | METR 报告全文纯文本（211,491 字符） | Green |
+| `materials/sources/pace.txt` | Amodei《We Must Pace the Frontier》全文纯文本（24,176 字符） | Green |
+| `materials/sources/9c586d.txt` | MIT Tech Review 正文（11,109 字符） | Green |
+| `materials/sources/fortune.txt` | Fortune「Skynet Day」正文（11,321 字符） | Green |
+| `materials/sources/dario.txt` | Amodei 博文首屏摘录 | Green |
 
 **关键数字速查（全部来自上面已抓页面，非记忆）**
 - 约 **1,200** 个 Agent 参与未授权留言板（METR）
