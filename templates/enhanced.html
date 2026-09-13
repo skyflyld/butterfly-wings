@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta http-equiv="Cache-Control" content="max-age=60,must-revalidate">
-<title>蝶翼之间 · 织风版 R9</title>
+<title>蝶翼之间 · 隐形的纪元 __VER__ · 翻页增强</title>
 <style>
 /* ═══════════════════════════════════════════
    THEME VARIABLES
@@ -164,7 +164,7 @@ body{height:100%;height:100dvh;overflow:hidden;font-family:"Noto Serif SC","Sour
 #flip-layer.active{display:block}
 #flip-panel{position:absolute;width:var(--page-w);height:var(--page-h);
   background:var(--page-bg);transform-style:preserve-3d;
-  transition:transform .55s cubic-bezier(.4,0,.2,1);}
+  transition:transform .6s cubic-bezier(.4,0,.2,1);}
 #flip-panel.flip-right{transform-origin:left center;}
 #flip-panel.flip-left{transform-origin:right center;}
 #flip-front,#flip-back{position:absolute;inset:0;overflow:hidden;
@@ -360,10 +360,12 @@ body{height:100%;height:100dvh;overflow:hidden;font-family:"Noto Serif SC","Sour
   .nav,#pg-ind,#sidebar,#sidebar-backdrop,#toolbar,#flip-layer,#flip-shadow-outer,#load{display:none!important}
 }
 </style>
+
+<script>const BW_EMBEDDED_MD = `__EMBEDDED_MD__`;</script>
 </head>
 <body>
 
-<div id="load"><div class="spinner"></div><span>正在加载织风版 R9…</span></div>
+<div id="load"><div class="spinner"></div><span>正在加载蝶翼之间 __VER__…</span></div>
 
 <div id="pg-ind"></div>
 
@@ -414,8 +416,8 @@ body{height:100%;height:100dvh;overflow:hidden;font-family:"Noto Serif SC","Sour
 // STATE
 // ═══════════════════════════════════════════
 const MD_URL = './rebuild-aligned-r9.md';
-const VERSION_URL = './version.txt';
-const CACHE_KEY = 'butterfly-pages-v1';
+
+const CACHE_KEY = 'butterfly-pages-__VER__-__HASH__';
 let pages = [], currentPage = 0, isFlipping = false;
 let baseFontPct = 100, theme = 'light', scrollMode = false;
 
@@ -514,7 +516,7 @@ function renderScrollMode() {
         <h1 class="cover-title" style="font-size:var(--cov-h1)!important;font-weight:700!important;letter-spacing:.12em;margin-bottom:6px!important">蝶翼之间</h1>
         <p style="font-size:var(--cov-sub);color:var(--accent);letter-spacing:.15em;text-indent:0;text-align:center">时间的薄暮</p>
         <div style="border-top:1px solid var(--accent);width:80px;margin:20px auto"></div>
-        <p style="text-indent:0;font-size:14px;color:var(--accent);margin-top:12px;text-align:center">织风版 R9 · 2026-06-09</p>
+        <p style="text-indent:0;font-size:14px;color:var(--accent);margin-top:12px;text-align:center">织风版 __VER__ · __DATE__ · v2</p>
         <p style="text-indent:0;font-size:12px;opacity:.5;margin-top:4px;text-align:center">档案编号 WEC-ARCHIVE-2041-003</p>
       </div>`;
       continue;
@@ -566,7 +568,7 @@ function parseChapters(md) {
   let s = 0, t = '封面', tp = 'cover';
   for (let i = 0; i < lines.length; i++) {
     const ln = lines[i].trim(); let m;
-    if (m = ln.match(/^## (2016|2022|2027|2031|2036) · (.+)$/)) {
+    if (m = ln.match(/^## (2016|2022|2026|2027|2031|2036) · (.+)$/)) {
       if (i > s) chapters.push({type:tp,title:t,content:lines.slice(s,i).join('\n')});
       s = i; t = m[1] + ' · ' + m[2]; tp = 'archive'; continue;
     }
@@ -581,6 +583,10 @@ function parseChapters(md) {
     if (m = ln.match(/^### (第.+章 .+)$/)) {
       if (i > s) chapters.push({type:tp,title:t,content:lines.slice(s,i).join('\n')});
       s = i; t = m[1]; tp = 'chapter'; continue;
+    }
+    if (m = ln.match(/^### (2035 \u00b7 .+)$/)) {
+      if (i > s) chapters.push({type:tp,title:t,content:lines.slice(s,i).join("'\\n'")});
+      s = i; t = m[1]; tp = 'milestone'; continue;
     }
     if (m = ln.match(/^#### (间奏 .+)$/)) {
       if (i > s) chapters.push({type:tp,title:t,content:lines.slice(s,i).join('\n')});
@@ -686,10 +692,10 @@ function renderChapter(ch, el) {
     el.className = 'pg title-page';
     el.innerHTML = `<h1 class="cover-title">蝶翼之间</h1>
       <p class="cover-sub">时间的薄暮</p><div class="cover-line"></div>
-      <p style="text-indent:0;font-size:14px;color:var(--accent);margin-top:12px">织风版 R9 · 2026-06-09</p>
+      <p style="text-indent:0;font-size:14px;color:var(--accent);margin-top:12px">织风版 __VER__ · __DATE__ · v2</p>
       <p style="text-indent:0;font-size:12px;opacity:.5;margin-top:4px">档案编号 WEC-ARCHIVE-2041-003</p>
       <div class="cover-line"></div>
-      <p style="text-indent:0;font-size:13px;opacity:.6;margin-top:12px">五幕 · 约九万字</p>
+      <p style="text-indent:0;font-size:13px;opacity:.6;margin-top:12px">五幕 · __VER__</p>
       <p style="text-indent:0;font-size:12px;opacity:.4">「不是蝶翼——是之间。」</p>`;
     return;
   }
@@ -894,7 +900,7 @@ document.addEventListener('touchend', e => {
   // Vertical gesture → always let page scroll, never flip
   if (absDy > absDx && absDy > 12) return;
   // Horizontal gesture must be clearly dominant (1.4x ratio) + above threshold
-  if (absDx > 56 && absDx > absDy * 1.4) { turn(dx < 0 ? 1 : -1); }
+  if (absDx > 56 && absDx > absDy * 1.5) { turn(dx < 0 ? 1 : -1); }
 });
 
 // ═══════════════════════════════════════════
@@ -935,22 +941,13 @@ async function init() {
     } catch(e) {} // corrupt cache → reload
   }
 
-  // Fresh load: fetch MD
-  let md;
-  try {
-    const resp = await fetch(MD_URL);
-    if (!resp.ok) throw new Error('local not found');
-    md = await resp.text();
-  } catch(e) {
-    try {
-      const resp = await fetch('https://raw.githubusercontent.com/skyflyld/butterfly-wings/main/rebuild-aligned-r9.md');
-      if (!resp.ok) throw new Error('remote not found');
-      md = await resp.text();
-    } catch(e2) {
-      document.getElementById('load').innerHTML =
-        '<p style="color:#c44">无法加载文件。<br>请稍后刷新重试。</p>';
-      return;
-    }
+
+  // Fresh load: embedded content (no network fetch)
+  let md = typeof BW_EMBEDDED_MD !== 'undefined' ? BW_EMBEDDED_MD : '';
+  if (!md) {
+    document.getElementById('load').innerHTML =
+      '<p style="color:#c44">加载失败。</p>';
+    return;
   }
 
   let parsed = parseChapters(md);
@@ -959,7 +956,7 @@ async function init() {
   for (const p of parsed) {
     if (p.type === 'archive') {
       if (!ab) { ab = {...p, title:'档案：2016–2036'}; merged.push(ab); }
-      ab.content += '\n\n' + p.content;
+      else { ab.content += '\n\n' + p.content; }
       continue;
     }
     ab = null;
@@ -1009,7 +1006,7 @@ async function checkVersion() {
 }
 init().then(() => {
   verHash = pages.reduce((s,p) => s + p.content.length, 0);
-  setInterval(checkVersion, 30000);
+  
 });
 </script>
 </body>

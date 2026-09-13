@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>蝶翼之间 · 隐形的纪元 __VER__ · 翻页书</title>
+<link rel="stylesheet" href="flipbook/stPageFlip.css">
+<style>
+:root {
+  --bg:#3a3a3a; --paper:#faf7f0; --ink:#2c2416;
+  --accent:#8b7355; --gold:#c8a878; --muted:#8a7a62;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html,body { height:100%; }
+body {
+  background:radial-gradient(ellipse at 50% 40%, #4a4640 0%, var(--bg) 70%);
+  font-family:'Noto Serif SC','Songti SC','SimSun',Georgia,serif;
+  color:var(--ink); display:flex; flex-direction:column; align-items:center;
+  overflow:hidden; -webkit-font-smoothing:antialiased;
+}
+#bookWrap { flex:1; width:100%; display:flex; align-items:center; justify-content:center; padding:8px 12px; position:relative; z-index:2; }
+#book { width:min(92vw, 860px); height:min(80vh, 640px); position:relative; }
+.book-page {
+  width:100%; height:100%; background:var(--paper); border-radius:4px 8px 8px 4px;
+  padding:26px 34px; overflow-y:auto; overflow-x:hidden; position:relative;
+  box-shadow:inset 0 0 30px rgba(0,0,0,.08);
+  scrollbar-width:thin; scrollbar-color:rgba(0,0,0,.2) transparent;
+}
+.book-page::-webkit-scrollbar { width:5px; }
+.book-page::-webkit-scrollbar-thumb { background:rgba(0,0,0,.18); border-radius:3px; }
+/* 封面 */
+.cover-page { color:#f5f0e6; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden;
+  background:linear-gradient(160deg, #2c2416 0%, #5a4a38 55%, #8b7355 100%); }
+.cover-inner { position:relative; z-index:2; padding:20px; }
+.cover-eyebrow { font-size:14px; letter-spacing:4px; color:rgba(245,240,230,.75); margin-bottom:18px; }
+.cover-title { font-size:56px; font-weight:800; letter-spacing:6px; color:#f5f0e6; margin-bottom:16px; line-height:1.15; text-shadow:0 3px 20px rgba(0,0,0,.5); }
+.cover-divider { width:56px; height:2px; background:rgba(245,240,230,.4); margin:0 auto 18px; }
+.cover-sub { font-size:18px; letter-spacing:.35em; color:rgba(245,240,230,.8); }
+/* 目录 */
+.pg-h { font-size:19px; font-weight:800; color:#3a2c16; margin-bottom:8px; padding-bottom:6px; border-bottom:2px solid #d8cfba; }
+.pg-desc { font-size:13px; color:var(--muted); line-height:1.7; margin-bottom:10px; }
+.toc-list { display:flex; flex-direction:column; gap:1px; }
+.toc-row { display:flex; align-items:center; gap:9px; padding:5px 10px; border-radius:5px; font-size:13.5px; cursor:pointer; transition:background .12s; width:100%; background:none; border:none; text-align:left; font-family:inherit; color:inherit; }
+.toc-row:hover { background:#efe9da; }
+.toc-lv { font-size:11px; font-weight:700; color:var(--accent); width:22px; flex-shrink:0; }
+.toc-name { font-weight:600; color:#3a2c16; }
+/* 正文 */
+.ch-title { font-size:21px; font-weight:800; color:#3a2c16; margin-bottom:14px; padding-bottom:8px; border-bottom:1px solid #e2dac6; }
+.pg-body p { font-size:15.5px; line-height:2.0; color:rgba(44,36,22,.9); margin-bottom:14px; text-align:justify; }
+.pg-body em { font-style:italic; color:#6b5325; }
+/* 与 enhanced 版一致的智能段内停顿（smartBreak 产出） */
+.pg-body .pb { display:block; height:0; margin:6px 0; }
+.pg-body .pb::before { content:''; display:block; width:24px; height:4px;
+  background:var(--accent); opacity:.2; border-radius:2px; margin:0 auto 8px; }
+.pg-body strong { font-weight:700; color:#3a2c16; }
+.pg-body code { font-family:"SF Mono","Fira Code",Consolas,monospace; font-size:.92em;
+  background:#efe9da; padding:1px 5px; border-radius:3px; }
+.pg-body blockquote { border-left:3px solid var(--accent); padding-left:12px;
+  color:var(--muted); font-style:italic; margin-bottom:14px; }
+.pg-body hr { border:0; border-top:1px solid #e2dac6; margin:14px 0; }
+.pg-body h4, .pg-body h5 { font-size:16px; font-weight:700; color:#3a2c16; margin:4px 0 10px; }
+.pg-body p:first-child::first-letter { font-size:1.5em; color:var(--accent); }
+/* 封底 */
+.back-page { color:#f5f0e6; display:flex; align-items:center; justify-content:center; text-align:center; overflow:hidden;
+  background:linear-gradient(160deg, #8b7355 0%, #5a4a38 55%, #2c2416 100%); }
+.back-poem { font-size:28px; font-weight:400; color:#f5f0e6; letter-spacing:6px; line-height:1.9; text-shadow:0 2px 12px rgba(0,0,0,.6); }
+/* 控制条 */
+.book-controls { width:100%; display:flex; align-items:center; justify-content:center; gap:14px; padding:8px 16px 14px; color:#d8c8a8; font-size:13px; z-index:5; }
+.ctrl-btn { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); color:#efe6d4; border-radius:8px; padding:7px 18px; font-size:13px; cursor:pointer; transition:all .15s; }
+.ctrl-btn:hover { background:rgba(200,168,120,.2); border-color:var(--gold); }
+#pageInfo { min-width:70px; text-align:center; font-variant-numeric:tabular-nums; }
+.stf__parent { touch-action: pan-x pan-y !important; }
+@media (max-width:768px) {
+  #book { width:min(94vw, 480px); height:min(78vh, 720px); }
+  .book-page { padding:16px 18px; }
+  .cover-title { font-size:32px; letter-spacing:2px; }
+  .pg-body p { font-size:14px; line-height:1.9; }
+}
+</style>
+</head>
+<body>
+<div id="bookWrap"><div id="book">
+  <div class="book-page cover-page"><div class="cover-inner">
+    <div class="cover-eyebrow">WEC-ARCHIVE-2041-003 · 解密日期 2041.03.15</div>
+    <div class="cover-title">蝶翼之间</div>
+    <div class="cover-divider"></div>
+<div class="cover-sub">隐形的纪元 · __VER__</div>
+  </div></div>
+  <div class="book-page toc-page">
+    <h2 class="pg-h">📑 目录</h2>
+    <div class="pg-desc">点章节名跳转。左右键或滑动翻页。</div>
+<div class="toc-list">__TOC_ROWS__</div>
+  </div>
+__PAGES__
+  <div class="book-page back-page"><div class="back-poem">We became the pause.</div></div>
+</div></div>
+<div class="book-controls">
+  <button class="ctrl-btn" id="prevBtn">‹ 上一页</button>
+<span id="pageInfo">1 / __PAGECOUNT__</span>
+  <button class="ctrl-btn" id="nextBtn">下一页 ›</button>
+</div>
+<script src="flipbook/page-flip.browser.js"></script>
+<script>
+(function(){
+  var pages = __PAGECOUNT__;
+  var isMobile = window.innerWidth <= 768;
+  var bookEl = document.getElementById('book');
+  var pageFlip = null;
+  var useCss = false;
+  function initFlip() {
+    if ((window.StPageFlip || (window.St && window.St.PageFlip)) && !useCss) {
+      try {
+        var FlipCls = window.StPageFlip || window.St.PageFlip;
+        pageFlip = new FlipCls(bookEl, {
+          width: isMobile ? 440 : 820, height: isMobile ? 640 : 600,
+          size: 'stretch', minWidth: isMobile ? 320 : 480, maxWidth: isMobile ? 460 : 860,
+          minHeight: isMobile ? 460 : 560, maxHeight: isMobile ? 700 : 660,
+          drawShadow: true, flippingTime: 600, usePortrait: true,
+          startZIndex: 0, autoSize: true, maxShadowOpacity: 0.5,
+          showCover: false, mobileScrollSupport: true, swipeDistance: 70,
+          useMouseEvents: false
+        });
+        pageFlip.loadFromHTML(document.querySelectorAll('.book-page'));
+        document.getElementById('prevBtn').onclick = function() { pageFlip.flipPrev(); };
+        document.getElementById('nextBtn').onclick = function() { pageFlip.flipNext(); };
+        function updateInfo() {
+          var cur = pageFlip.getCurrentPageIndex();
+          document.getElementById('pageInfo').textContent = (cur + 1) + ' / ' + pages;
+        }
+        pageFlip.on('flip', updateInfo);
+        pageFlip.on('changeState', updateInfo);
+        setTimeout(updateInfo, 900);
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowLeft') pageFlip.flipPrev();
+          if (e.key === 'ArrowRight') pageFlip.flipNext();
+        });
+        var tx = 0, ty = 0, touching = false;
+        bookEl.addEventListener('touchstart', function(e) {
+          if (e.touches.length) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; touching = true; }
+        }, {passive:true});
+        bookEl.addEventListener('touchend', function(e) {
+          if (!touching) return; touching = false;
+          var dx = e.changedTouches[0].clientX - tx;
+          var dy = e.changedTouches[0].clientY - ty;
+          if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+            if (dx < 0) pageFlip.flipNext(); else pageFlip.flipPrev();
+          }
+        }, {passive:true});
+        // 目录跳转（桌面端对开页取偶数）
+        document.querySelectorAll('.toc-row').forEach(function(row) {
+          row.onclick = function() {
+            var target = parseInt(row.dataset.pg, 10) + 2; // +2 因为 cover(0) toc(1)
+            if (!isMobile) target = Math.floor(target / 2) * 2;
+            pageFlip.flip(target);
+            updateInfo();
+          };
+        });
+        return;
+      } catch(e) { console.warn('StPageFlip init failed:', e); }
+    }
+    // CSS 降级
+    useCss = true;
+    var idx = 0;
+    var els = document.querySelectorAll('.book-page');
+    els.forEach(function(el, i) { el.style.display = i === 0 ? 'block' : 'none'; });
+    function show(i) {
+      idx = Math.max(0, Math.min(pages - 1, i));
+      els.forEach(function(el, j) { el.style.display = j === idx ? 'block' : 'none'; });
+      document.getElementById('pageInfo').textContent = (idx + 1) + ' / ' + pages;
+      if (els[idx]) els[idx].scrollTop = 0;
+    }
+    document.getElementById('prevBtn').onclick = function() { show(idx - 1); };
+    document.getElementById('nextBtn').onclick = function() { show(idx + 1); };
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key === 'ArrowRight') show(idx + 1);
+    });
+    var sx = 0, sy = 0;
+    bookEl.addEventListener('touchstart', function(e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+    bookEl.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - sx;
+      var dy = e.changedTouches[0].clientY - sy;
+      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) show(idx + (dx < 0 ? 1 : -1));
+    }, {passive:true});
+    document.querySelectorAll('.toc-row').forEach(function(row) {
+      row.onclick = function() { show(parseInt(row.dataset.pg, 10) + 2); };
+    });
+    show(0);
+  }
+  window.addEventListener('resize', function() {
+    var m = window.innerWidth <= 768;
+    if (m !== isMobile) { isMobile = m; location.reload(); }
+  });
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initFlip);
+  else initFlip();
+})();
+</script>
+</body>
+</html>
