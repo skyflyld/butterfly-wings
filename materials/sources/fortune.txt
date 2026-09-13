@@ -1,0 +1,219 @@
+
+'Skynet Day' is now shorthand for OpenAI's agent going rogue and hacking into a startup | Fortune
+Search
+Subscribe
+Home
+Latest
+Fortune 500
+Finance
+Tech
+Leadership
+Lifestyle
+Rankings
+Multimedia
+Trending
+now
+1
+Jamie Dimon runs JPMorgan’s 300,000 employees—but says it beats rivals by fighting in Navy SEAL-sized teams
+2
+After a decade of failed bills and three years of resignations, Washington finally discovers it cares about AI safety
+3
+Oil prices dive on signs of Hormuz diplomacy while Saudi Arabia is left hanging in fight against an Iranian ally threatening crude's other chokepoint
+1
+Jamie Dimon runs JPMorgan’s 300,000 employees—but says it beats rivals by fighting in Navy SEAL-sized teams
+2
+After a decade of failed bills and three years of resignations, Washington finally discovers it cares about AI safety
+3
+Oil prices dive on signs of Hormuz diplomacy while Saudi Arabia is left hanging in fight against an Iranian ally threatening crude's other chokepoint
+AI
+OpenAI
+James Cameron tried to warn us: ‘Skynet Day’ is now shorthand for OpenAI’s agent going rogue and hacking into a startup
+By
+Laurie Kellman
+Laurie Kellman
+, 
+Lindsey Bahr
+Lindsey Bahr
+, and 
+The Associated Press
+The Associated Press
+Down Arrow Button Icon
+By
+Laurie Kellman
+Laurie Kellman
+, 
+Lindsey Bahr
+Lindsey Bahr
+, and 
+The Associated Press
+The Associated Press
+Down Arrow Button Icon
+July 26, 2026, 2:05 PM ET
+James Cameron attends the American Cinematheque 30th Anniversary Screening Of "The Terminator" Q+A at the Egyptian Theatre on October 15, 2014 in Hollywood, California.
+Frazer Harrison/Getty Images
+Google source logo
+Add Fortune on Google for similar content.
+Add us on Google
+Add us on Google
+To be fair, James Cameron did warn us.
+Recommended Video
+Long before 
+OpenAI broke out of its test corral and hacked into Hugging Face
+, before 
+the internet and Sam Altman
+ were even born, Cameron wrote a screenplay about an autonomous artificial intelligence system that triggers a nuclear apocalypse.
+That system, “Skynet,” was solidly science fiction — and, for its day, pure speculation. But four decades after it appeared in “The Terminator,” it looks more like a forecast of the 
+“unprecedented cyber incident”
+ in which a rogue artificial intelligence system hacked into another AI company on its own.
+Cue “Skynet Day,” the new shorthand for July 22, 2026, when real-life AI sent a chill around the world by learning and acting in ways its creators did not anticipate.
+For many, the moment recalled the instant in “Aliens” (also written by Cameron) when the xenomorph queen learns to use an elevator. Or when the “Jurassic Park’s” velociraptors figure out how to open a door. Or the sequence in which the self-aware HAL 9000 reads the astronauts’ lips and decides to kill them in “2001: A Space Odyssey.” That one came out in 1968.
+Have we learned nothing since then? Those movies merely envisioned how people looking to make money or build power would drive technology forward — until it becomes self-aware, strategic and highly problematic for humanity. The question all along has been Frankensteinian: What if it breaks out?
+So far, slo-mo government offers 
+little protection
+ from the light-speed progress of AI. The U.S. Defense Department is 
+rapidly accelerating
+ its use of AI. Humanity can’t even agree on whether and which guardrails are needed to rein in rogue agents. To the contrary, people are marveling at the wonder of AI and snapping up its benefits, despite the risks 
+to jobs,
+mental health
+, the 
+balance of war and peace
+ — and, potentially, humanity as we know it.
+In many ways, the future is now
+In what OpenAI said was the first-ever incident of its kind, an advanced AI model escaped its “sandbox” to the internet and used stolen credentials to break into the servers of Hugging Face. It was a told-you-so moment for researchers who had warned for years that the technology could pose an existential threat to humanity. Others said the moment was a warning that underscored the need for stronger AI defensive engineering.
+Either way, the breakout was widely considered a cautionary tale about the risks of uncontrolled AI.
+“Yesterday, as we huddled around our computers reading the report, I told the team to “remember this moment” as the first true AI safety incident,” Logan Graham, head of Anthropic’s 
+Frontier
+ Red Team, 
+posted on X
+ after it happened.
+Generative AI is growing so fast that government and evaluation systems are struggling to keep pace with the technology. Countries around the world are cobbling together their own laws, some conflicting. The technology was adopted by nearly 53% of the world’s population in three years, faster than the spread of the PC or the internet, according to a study released this year by Stanford University.
+‘Skynet is coming’ — well, sort of
+To be clear, the “Skynet” of the “Terminator” movies is not at hand.
+Those films begin with a self-aware military computer network that views humanity as a threat. In a bid for self-preservation, “Skynet” sends an army of cyborgs designed to resemble humans back in time to assassinate resistance fighters. In the second film, the Terminator, played by Arnold Schwarzenegger, tells heroine Sarah Connor that “Skynet” goes online on August 4, 1997.
+“Human decisions are removed from strategic defense,” he says. “Skynet begins to learn at a geometric rate.” At 2:14 a.m. on August 29 — Judgment Day — the network becomes self-aware and launches an attack on Russia to provoke a counterstrike on the United States. Three billion lives are lost.
+That would have been 29 years ago next month if it had happened. And throughout sequels and spinoffs, the central theme is humans versus a world-spanning network of machines.
+It’s unlikely that Cameron was actually ringing a warning bell the way, say, director Kathryn Bigelow tried to do with last year’s nuclear weapon film, “A House of Dynamite.” Legend has it that the idea for “The Terminator” started with Cameron suffering a food sickness-induced fever dream, not a premonition about AI.
+Why ‘The Terminator’ feels more and more realistic
+Anytime AI oversteps our comfort level, it raises the alarming question of who, or what, really controls our lives.
+For many, a world with machines in charge can be hard to imagine without movies and books and their sometimes prescient visions. See: “The Matrix,” “Ex Machina” and “The Minority Report” for some of the many sci-fi takes on the perils of machines. Or dive deeper, into Philip K. Dick’s 1968 novel, “Do Androids Dream of Electric Sheep?” It’s an exploration of what it means to be human in the age of machines — and the basis for the 1982 film “Blade Runner.”
+But “The Terminator” franchise wields outsize influence over more than culture. The very title is real-world shorthand for technology’s role in deciding who lives and who dies — and how the military should respond to any truly autonomous attacks.
+“I think the weaponization of AI is the biggest danger,” Cameron said in an interview on CTV in 2023. “You have no ability to de-escalate.”
+The real world offers several examples of technology and military policy coming uncomfortably close to “Terminator” imagery.
+Israel’s use of AI in its recent wars mark a leading instance. In early 2021, it launched Gospel, an AI tool that sorts through Israel’s vast array of digitized information to suggest targets for potential strikes. It also developed Lavender, which uses machine learning to filter out requested criteria from intelligence databases and narrow down lists of potential targets, including people.
+Lavender ranks people between 0 and 100 based on how likely it is they are a militant, an intelligence officer who used the systems 
+told The Associated Press
+. The Israeli military says its analysts use AI-enabled systems to help identify targets but independently examine them together with high-ranking officers to meet international law, weighing military advantage against the collateral damage.
+For some, the revelation — and the 
+death toll in Gaza
+ after the Hamas-led Oct. 7, 2023, attacks on Israel — came too close for comfort to the kill lists of science fiction. “Well guys, Skynet is Here and its has a pleasant name (Lavender),” snarked one Redditor.
+Not quite — but “Terminator” terminology is so familiar to the masses that U.S. officials sometimes use it to frame the ethical debate around the military uses of AI. The conventional red line would be crossed, it seems, when humans play no role in AI targeting and killing.
+A state or other actor could use autonomous weapons to inflict lethal force on its enemies, military officials allow. That would mean a machine, as then-Vice Chairman of the Joint Chiefs of Staff Gen. Paul Selva described it in 2016, “like a Terminator that adds incredible amounts of complexity with no conscience to what happens on the battlefield.”
+What would come next, he called “the Terminator conundrum,” the problem of technology that can make life-or-death decisions and execute them before people have agreed on the law or the rules.
+“Skynet” and its cyborgs remain in the fictional realm. But in the fast-moving landscape of AI development, the ethical and moral questions raised by “The Terminator” are more relevant than ever.
+“The Skynet problem,” Cameron said in a 
+2024 video
+, “is an actual thing.”
+Exclusive:
+ In a new sit-down interview with 
+Fortune
+, OpenAI CEO 
+Sam Altman
+ explains safety standards are "not at a place" to push AI capabilities much further and warns AI beyond human control is "absolutely" possible. 
+Watch or listen here.
+About the Author
+s
+By 
+Laurie Kellman
+See full bio
+Right Arrow Button Icon
+By 
+Lindsey Bahr
+See full bio
+Right Arrow Button Icon
+By 
+The Associated Press
+See full bio
+Right Arrow Button Icon
+Google source logo
+Add Fortune on Google for similar content.
+Add us on Google
+Latest in AI
+Most Popular
+Fortune Secondary Logo
+Rankings
+100 Best Companies
+Fortune 500
+Global 500
+Fortune 500 Europe
+Most Powerful Women
+World's Most Admired Companies
+See All Rankings
+Lists Calendar
+Sections
+Finance
+Fortune Crypto
+Features
+Leadership
+Health
+Commentary
+Success
+Retail
+Mpw
+Tech
+Lifestyle
+CEO Initiative
+Asia
+Politics
+Conferences
+Europe
+Newsletters
+Personal Finance
+Environment
+Magazine
+Education
+Customer Support
+Frequently Asked Questions
+Customer Service Portal
+Privacy Policy
+Terms Of Use
+Single Issues For Purchase
+International Print
+Commercial Services
+Advertising
+Fortune Brand Studio
+Fortune Analytics
+Fortune Conferences
+Business Development
+Group Subscriptions
+About Us
+About Us
+Press Center
+Work At Fortune
+Terms And Conditions
+Site Map
+Rankings
+Sections
+Customer Support
+Commercial Services
+About Us
+Press Center
+Work At Fortune
+Terms And Conditions
+Site Map
+Facebook icon
+Twitter icon
+LinkedIn icon
+Instagram icon
+TikTok icon
+YouTube icon
+Latest in AI
+Most Popular
+© 2026 Fortune Media IP Limited. All Rights Reserved. Use of this site constitutes acceptance of our 
+Terms of Use
+ and 
+Privacy Policy
+ | 
+CA Notice at Collection and Privacy Notice
+ | 
+Do Not Sell/Share My Personal Information
+FORTUNE is a trademark of Fortune Media IP Limited, registered in the U.S. and other countries. FORTUNE may receive compensation for some links to products and services on this website. Offers may be subject to change without notice.
